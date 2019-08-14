@@ -1,24 +1,18 @@
-# README
+# Private Events
+## About
+The idea behind this [project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) is to create 
+an event planning website similar to [Eventbrite](http://www.eventbrite.com/) where users can create events and send out
+invitations.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A user can create events. A user can attend many events. An event can be attended by many users. This will require you
+to model many-to-many relationships and also to be very conscious about your foreign keys and class names 
+(hint: you won’t be able to just rely on Rails’ defaults like you have before).
 
-Things you may want to cover:
+## Getting started
+### Requirements: 
+* Ruby 2.6.3
+* Rails 5.2.3
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Installation
+* Clone the repo
+* run ```$ bundle install --without production``` to install dependencies
