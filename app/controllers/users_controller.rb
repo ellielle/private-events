@@ -9,6 +9,9 @@ class UsersController < ApplicationController
       log_in(@user)
       flash[:success] = "User created"
       redirect_to root_url
+    else
+      flash[:error] = "Username required."
+      render :new
     end
   end
 
