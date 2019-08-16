@@ -24,9 +24,9 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'rails-controller-testing'
+  gem 'minitest'
+  gem 'minitest-reporters'
 end
 
 group :production do
