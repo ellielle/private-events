@@ -8,6 +8,9 @@
     box-sizing: border-box;
 }
 
+/* Forms */
+
+
 /* Misc */
 .debug_dump {
   clear: both;
@@ -15,4 +18,16 @@
   width: 100%;
   margin-top: 45px;
   @include box-sizing
+}
+
+#error-messages {
+  margin-left: -20px;
+  color: red;
+  li {
+    list-style: none;
+  }
+}
+
+.alert {
+  margin-left: 22px;
 }
