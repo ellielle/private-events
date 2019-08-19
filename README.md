@@ -18,3 +18,4 @@ Note: Passwords for accounts are specifically not required per project instructi
 ### Installation
 * Clone the repo
 * run ```$ bundle install --without production``` to install dependencies
+* run ```$ rails test``` to ensure all tests pass
