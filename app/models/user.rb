@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :events
+  has_many :events, class_name: 'Event', foreign_key: :creator_id
   validates :username, presence: true
 end
