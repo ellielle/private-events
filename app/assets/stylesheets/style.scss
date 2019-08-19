@@ -7,6 +7,22 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+/* General */
+body {
+  padding-top: 60px;
+}
+
+/* Typography */
+
+p, h1 {
+  text-align: center;
+}
+
+h1 {
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
 
 /* Forms */
 
