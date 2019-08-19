@@ -1,10 +1,13 @@
 <% provide(:title, "Create Account") %>
 <h1>Create an Account</h1>
-No email required!
-
-<%= form_for(@user, url: signup_path) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.submit "Create Account", class: "btn btn-primary" %>
-<% end %>
+<p>No email required!</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: signup_path) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+      <%= f.submit "Create Account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
