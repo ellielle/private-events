@@ -1,2 +1,9 @@
 <% provide(:title, 'Profile') %>
-This will show all events user is hosting and all events user is planning to attend
+<% if @user.events.empty? %>
+    <p>You have no events scheduled.</p>
+<% else %>
+  <% @user.events.each do |event| %>
+    <ul class="event-title"><%= event.title %></ul>
+    <ul class="event-body"><%= event.body %></ul>
+  <% end %>
+<% end %>
