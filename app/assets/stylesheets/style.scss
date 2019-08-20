@@ -7,6 +7,11 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+$navbar-link-color: white;
+$navbar-link-hover: grey;
+$navbar-backgorund-color: black;
+
 /* General */
 body {
   padding-top: 60px;
@@ -24,6 +29,17 @@ body {
   }
 }
 
+.nav {
+  li {
+    a {
+      color: $navbar-link-color;
+      &:hover {
+        color: $navbar-link-hover;
+        background-color: $navbar-backgorund-color;
+      }
+    }
+  }
+}
 
 /* Typography */
 
