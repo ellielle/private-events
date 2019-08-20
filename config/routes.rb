@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  get 'create', to: 'events#create'
+  get 'create', to: 'events#new'
+  post 'create', to: 'events#create'
   get 'events(/:title)', to: 'events#show'
   get 'events', to: 'events#index'
   get 'signup', to: 'users#new'
