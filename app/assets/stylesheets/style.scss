@@ -12,6 +12,19 @@ body {
   padding-top: 60px;
 }
 
+/* Header */
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: capitalize;
+  padding-top: 9px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
 /* Typography */
 
 p, h1 {
@@ -26,6 +39,17 @@ h1 {
 
 /* Forms */
 
+#location{
+  margin-top: 10px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: none;
+}
 
 /* Misc */
 .debug_dump {
