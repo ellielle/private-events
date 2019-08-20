@@ -1,0 +1,20 @@
+<% provide(:title, "Create Event") %>
+<h1>Create New Event</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event, url: create_path) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control', rows: "5" %>
+      <%= f.label :date %>
+      <%= f.datetime_select :date, start_year: Date.today.year,
+                            default: 24.hours.from_now, ampm: true, class: 'form-control' %>
+      <br>
+      <%= f.label :location, id: 'location' %>
+      <%= f.text_field :location, class: 'form-control' %>
+      <%= f.submit "Create Event", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
