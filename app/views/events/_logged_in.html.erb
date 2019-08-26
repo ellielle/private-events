@@ -1,0 +1,6 @@
+<% provide(:title, "Events") %>
+<ul>
+  <% event_list.each do |event| %>
+    <li><%= event.title %> Hosted by: <%= event.creator_id %></li>
+  <% end %>
+</ul>

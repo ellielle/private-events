@@ -16,10 +16,11 @@ class EventsController < ApplicationController
 
   def show
     # TODO hide old events in a collapsed area
-    @event = Event.find_by(slug: params[:slug])
+    @event = Event.find_by(slug: params[:slug]) # TODO REWRITE
   end
 
   def index
+    @events = Event.all
   end
 
   private

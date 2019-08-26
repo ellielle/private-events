@@ -6,8 +6,9 @@ class Event < ApplicationRecord
   validates :date, presence: true
   validates :location, presence: true
 
+  #TODO REMOVE BELOW
   def to_param
-    slug
+    "#{id}-#{slug}"
   end
 
   private
