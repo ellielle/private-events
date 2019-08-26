@@ -1,2 +1,6 @@
 <% provide(:title, "Events") %>
-<h1>HIHJOIHO</h1>
+<% if logged_in? %>
+  <%= render 'events/logged_in', event_list: @events %>
+<% else %>
+  <%= render 'events/logged_out' %>
+<% end %>
