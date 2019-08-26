@@ -3,7 +3,9 @@
     <p>You have no events scheduled.</p>
 <% else %>
   <% @user.events.each do |event| %>
-    <ul class="event-title"><%= event.title %></ul>
-    <ul class="event-body"><%= event.body %></ul>
+    <ul>
+    <li class="event-title">Event: <%= link_to "#{event.title}", "/events/#{event.title}" %></li>
+    <li class="event-body"><%= event.body %></li>
+    </ul>
   <% end %>
 <% end %>
