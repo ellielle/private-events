@@ -2,6 +2,9 @@
   <div class="container">
     <%= link_to "Simple Events", root_path, id: "logo" %>
     <nav>
+      <ul class="nav navbar-nav navbar-center">
+        <li><%= link_to "Current Events", events_path %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
