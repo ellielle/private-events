@@ -4,11 +4,11 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to "Sign out", logout_path, method: :delete %></li>
+          <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
           <li><%= link_to "Your Events", profile_path %></li>
           <li><%= link_to "Create New Event", create_path %></li>
         <% else %>
-          <li><%= link_to "Sign in", login_path  %></li>
+          <li><%= link_to "Sign In", login_path  %></li>
         <% end %>
        </ul>
     </nav>
