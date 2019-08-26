@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @event = Event.friendly.find(params[:id])
   end
 
   def index
