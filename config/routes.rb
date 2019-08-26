@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'create', to: 'events#new'
   post 'create', to: 'events#create'
-  get 'events(/:title)', to: 'events#show'
+  get 'events(/:slug)', to: 'events#show'
   get 'events', to: 'events#index'
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   resources :users, only: [:new, :create, :show]
-  resources :events, only: [:create, :show, :index]
+  resources :events, only: [:show, :create, :index]
 end
