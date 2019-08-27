@@ -65,6 +65,8 @@ GEM
     crass (1.0.4)
     erubi (1.8.0)
     execjs (2.7.0)
+    faker (2.1.2)
+      i18n (>= 0.8)
     ffi (1.11.1)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
@@ -191,6 +193,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.4.1)
   byebug
   coffee-rails (~> 4.2)
+  faker (~> 2.1.2)
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
