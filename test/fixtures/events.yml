@@ -3,7 +3,7 @@ birthday:
   body: "Cake!"
   date: <%= Time.now %>
   location: "Here"
-  creator_id: "Butts"
+  creator_id: 1
 
 <% 25.times do |n| %>
 event_<%= n %>:
@@ -11,4 +11,5 @@ event_<%= n %>:
   body: <%= Faker::Lorem.sentences(number: 5) %>
   date: <%= Faker::Date.forward(days: 25) %>
   location: <%= Faker::Restaurant.name %>
+  creator_id: 1
 <% end %>
