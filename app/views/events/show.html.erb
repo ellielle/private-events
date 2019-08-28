@@ -1,0 +1,12 @@
+<% provide(:title, @event.title) %>
+<div class="attendees">
+  <% if !@event.attendees.empty? %>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li><%= attendee %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>No one is attending this event.</p>
+  <% end %>
+</div>
