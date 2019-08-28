@@ -15,8 +15,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @events = @user.events.all
+    if logged_in?
+      @user = current_user
+      @events = @user.events.all
+    else
+      flash[:danger] = "You are not logged in!"
+      redirect_to root_path
+    end
   end
 
   private
