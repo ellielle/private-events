@@ -9,7 +9,7 @@ class ActiveSupport::TestCase
   fixtures :all
   include ApplicationHelper
 
-  def logged_in?
+  def is_logged_in?
     !session[:user_id].nil?
   end
 
@@ -23,6 +23,6 @@ end
 class ActionDispatch::IntegrationTest
 
   def log_in_as(user)
-    post login_path, params: { session: { username: user } }
+    post login_path, params: { session: { username: user.username } }
   end
 end
