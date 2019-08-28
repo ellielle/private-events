@@ -15,7 +15,7 @@ Note: Passwords for accounts are specifically not required per project instructi
 * Ruby 2.6.3
 * Rails 5.2.3
 
-### Installation
+### Installation:
 * Clone the repo
 * run ```$ bundle install --without production``` to install dependencies
 * run ```$ rails test``` to ensure all tests pass
