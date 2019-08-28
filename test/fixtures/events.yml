@@ -1,13 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+birthday:
+  title: "Canada's birthday"
+  body: "Cake!"
+  date: <%= Time.now %>
+  location: "Here"
+  creator_id: "Butts"
 
-one:
-  title: MyString
-  body: MyText
-  date: 2019-08-19 03:42:46
-  location: MyString
-
-two:
-  title: MyString
-  body: MyText
-  date: 2019-08-19 03:42:46
-  location: MyString
+<% 25.times do |n| %>
+event_<%= n %>:
+  title: <%= Faker::Lorem.sentence %>
+  body: <%= Faker::Lorem.sentences(number: 5) %>
+  date: <%= Faker::Date.forward(days: 25) %>
+  location: <%= Faker::Restaurant.name %>
+<% end %>
