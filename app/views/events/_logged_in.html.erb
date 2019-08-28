@@ -1,5 +1,5 @@
 <% event_list.each do |event| %>
-  <div class="event-listing">
+  <div class="events-list">
     <ul>
       <%# TODO change event.creator_id to show creator's name %>
       <li><%= link_to "#{event.title}", event_path(event) %> Hosted by: <%= event.creator_id %></li>
