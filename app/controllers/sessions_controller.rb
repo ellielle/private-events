@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:session][:username])
-    if user.nil?
-      flash.now[:danger] = "User does not exist."
-      render :new
-    else
+    if user
       log_in(user)
       redirect_to profile_path
+    else
+      flash.now[:danger] = "User does not exist."
+      render :new
     end
   end
 
