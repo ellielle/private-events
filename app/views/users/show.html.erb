@@ -4,8 +4,8 @@
 <% else %>
   <% @user.events.each do |event| %>
     <ul>
-      <li class="event-title">Event: <%= link_to "#{event.title}", event_path(event) %></li>
-      <li class="event-snip"><%= event.body.truncate(30, separator: /\s/) %></li>
+      <li class="event-title"><%= link_to "#{event.title}", event_path(event) %></li>
+      <li class="event-snip"><%= event.body.truncate(40) %></li>
       <li class="date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
       <li class="location"><%= event.location %></li>
     </ul>
