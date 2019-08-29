@@ -10,7 +10,7 @@
 
 $navbar-link-color: white;
 $navbar-link-hover: grey;
-$navbar-backgorund-color: black;
+$navbar-background-color: #333333;
 
 /* General */
 body {
@@ -29,20 +29,34 @@ body {
   }
 }
 
-.nav {
-  li {
-    a {
-      color: $navbar-link-color;
-      &:hover {
-        color: $navbar-link-hover;
-        background-color: $navbar-backgorund-color;
+.navbar {
+  background-color: $navbar-background-color;
+  .nav {
+    li {
+      a {
+        color: $navbar-link-color;
+        &:hover {
+          color: $navbar-link-hover;
+          background-color: $navbar-background-color;
+        }
+      }
+    }
+    .open > a {
+      background-color: $navbar-background-color;
+      &:hover, &:focus {
+        background-color: $navbar-background-color;
       }
     }
   }
 }
 
+
 .navbar-center {
   margin-left: 30%;
+}
+
+.dropdown-menu {
+  background-color: $navbar-background-color;
 }
 /* Typography */
 
