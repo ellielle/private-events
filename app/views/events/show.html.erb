@@ -1,9 +1,10 @@
 <% provide(:title, @event.title) %>
+<%# TODO make page look better %>
 <div class="attendees">
   <% if !@event.attendees.empty? %>
   <ul>
     <% @event.attendees.each do |attendee| %>
-      <li><%= attendee %></li>
+      <li><%= attendee.username %></li>
     <% end %>
   </ul>
   <% else %>
