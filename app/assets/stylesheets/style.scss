@@ -17,6 +17,14 @@ body {
   padding-top: 60px;
 }
 
+// Line up events on profile page
+.created-events {
+  ul {
+    padding-left: 0;
+  }
+}
+
+
 /* Header */
 #logo {
   float: left;
@@ -60,7 +68,7 @@ body {
 }
 /* Typography */
 
-p, h1 {
+h1 {
   text-align: center;
 }
 
