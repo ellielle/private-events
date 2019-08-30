@@ -8,4 +8,14 @@ class Event < ApplicationRecord
   validates :body, presence: true
   validates :date, presence: true
   validates :location, presence: true
+
+  private
+
+  def upcoming
+    Event.all.where("date > ?", Time.now)
+  end
+
+  def past
+    Event.all.where("date < ?", Time.now)
+  end
 end
