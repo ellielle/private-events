@@ -12,7 +12,7 @@ Note: Passwords for accounts are specifically not required per project instructi
 
 ## Getting started
 <details>
-    <summary>Warning! Project Not yet Complete. Click to expand instructions.</summary>
+    <summary>Warning! Project not yet complete. Click to expand instructions.</summary>
 ### Requirements: 
 * Ruby 2.6.3
 * Rails 5.2.3
