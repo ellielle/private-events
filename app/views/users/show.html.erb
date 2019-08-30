@@ -1,6 +1,11 @@
 <% provide(:title, 'Profile') %>
 <div class="expired-events">
-
+  <a data-toggle="collapse" href="#expiredEvents">Click to view past events</a>
+  <div class="collapse" id="expiredEvents">
+    <% @expired_events.each do |event| %>
+      <%= link_to event.title, event_path(event) %>
+    <% end %>
+  </div>
 </div>
 <div class="created-events">
   <p>Events you have created:</p>
@@ -17,7 +22,7 @@
 </div>
 <div class="attending-events">
   <p>Events you are attending:</p>
-  <% @attended_events.each do |event| %>
+  <% @upcoming_events.each do |event| %>
     <ul>
       <li><%= link_to event.title, event_path(event) %></li>
       <li><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
