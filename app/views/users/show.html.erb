@@ -17,7 +17,6 @@
 </div>
 <div class="attending-events">
   <p>Events you are attending:</p>
-  <%# TODO this is outputting all events instead of events uesr is attending %>
   <% @attended_events.each do |event| %>
     <ul>
       <li><%= link_to event.title, event_path(event) %></li>
