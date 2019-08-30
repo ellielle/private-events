@@ -18,12 +18,11 @@ body {
 }
 
 // Line up events on profile page
-.created-events {
+.created-events, .attending-events, .attendees {
   ul {
     padding-left: 0;
   }
 }
-
 
 /* Header */
 #logo {
