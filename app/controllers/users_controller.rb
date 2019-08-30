@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = current_user
-      @events = @user.events.all
+      @attended_events = @user.attended_events
     else
       flash[:danger] = "You are not logged in!"
       redirect_to root_path
