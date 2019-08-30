@@ -1,13 +1,27 @@
 <% provide(:title, 'Profile') %>
-<% if @user.events.empty? %>
-    <p>You have no events scheduled.</p>
-<% else %>
-  <% @user.events.each do |event| %>
+<div class="expired-events">
+
+</div>
+<div class="created-events">
+  <p>Events you have created:</p>
+  <% if @user.events.empty? %>
+      <p>You have no events scheduled.</p>
+  <% else %>
+    <% @user.events.each do |event| %>
+      <ul>
+        <li class="event-title"><%= link_to "#{event.title}", event_path(event) %></li>
+        <li class="date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+<div class="attending-events">
+  <p>Events you are attending:</p>
+  <%# TODO this is outputting all events instead of events uesr is attending %>
+  <% @attended_events.each do |event| %>
     <ul>
-      <li class="event-title"><%= link_to "#{event.title}", event_path(event) %></li>
-      <li class="event-snip"><%= event.body.truncate(40) %></li>
-      <li class="date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
-      <li class="location"><%= event.location %></li>
+      <li><%= link_to event.title, event_path(event) %></li>
+      <li><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
     </ul>
   <% end %>
-<% end %>
+</div>
