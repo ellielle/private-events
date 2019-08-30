@@ -1,12 +1,5 @@
 <% provide(:title, 'Profile') %>
-<div class="expired-events">
-  <a data-toggle="collapse" href="#expiredEvents">Click to view past events</a>
-  <div class="collapse" id="expiredEvents">
-    <% @expired_events.each do |event| %>
-      <%= link_to event.title, event_path(event) %>
-    <% end %>
-  </div>
-</div>
+<%= render 'shared/expired_events', expired_events: @expired_events %>
 <div class="created-events">
   <p>Events you have created:</p>
   <% if @user.events.empty? %>
