@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = current_user
-      @attended_events = @user.attended_events
+      @expired_events = expired_events
+      @upcoming_events = upcoming_events
     else
       flash[:danger] = "You are not logged in!"
       redirect_to root_path
@@ -28,5 +29,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username)
+  end
+
+  def upcoming_events
+    @upcoming_events = @user.attended_events.where("date > ?", Time.now)
+  end
+
+  def expired_events
+    @expired_events = @user.attended_events.where("date <= ?", Time.now)
   end
 end
