@@ -10,7 +10,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get show for a logged in user, redirect if not logged in" do
+  test "should get show page for a logged in user, redirect if not logged in" do
     log_in_as(@user)
     get profile_path
     assert_response :success

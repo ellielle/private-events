@@ -8,10 +8,12 @@
         <%= content_tag :div, msg, class: "alert alert-#{message_type}" %>
       <% end %>
     <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
+      <% if Rails.env.development? %>
+    <%= debug(params) %>
     <% unless current_user.nil? %>
-      <%= debug(current_user.username) if Rails.env.development? %>
+      <%= debug(current_user.username) %>
     <% end %>
+        <% end %>
     </div>
   </body>
 </html>
