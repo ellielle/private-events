@@ -18,4 +18,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template 'users/new'
     assert_select 'div#error-messages'
   end
+
+  test "should redirect when trying to visit a profile while not logged in" do
+    get profile_path(users(:ellie))
+    assert_redirected_to root_path
+  end
 end
