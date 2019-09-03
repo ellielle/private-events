@@ -1,6 +1,6 @@
 <% provide(:title, "Events") %>
 <% if logged_in? %>
-  <%= render 'events/logged_in', event_list: @events %>
+  <%= render 'events/logged_in', expired_events: @expired, upcoming_events: @upcoming %>
 <% else %>
   <%= render 'events/logged_out' %>
 <% end %>
