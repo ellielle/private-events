@@ -1,8 +1,8 @@
 birthday:
-  title: "Canada's birthday"
-  body: "Cake!"
+  title: Canadas Birthday
+  body: Cake!
   date: <%= Time.now %>
-  location: "Here"
+  location: Here!
   creator_id: 1
 
 <% 25.times do |n| %>
