@@ -10,14 +10,14 @@ class EventsDisplayTest < ActionDispatch::IntegrationTest
     get events_path
     assert_template 'events/index'
     assert_template 'events/_logged_in'
-    assert_select "div.events-list", count: 26
+    assert_select 'div.events-list' do
+      assert_select 'li', count: 26
+    end
   end
 
-  test "events page shows no events when not logged in" do
+  test "events page redirects when not logged in" do
     get events_path
-    assert_template 'events/index'
-    assert_template 'events/_logged_out'
-    assert_select "div.events-list", count: 0
+    assert_redirected_to login_path
   end
 
   test "should get show page for a logged in user, redirect if not logged in" do
