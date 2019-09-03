@@ -11,5 +11,5 @@ event_<%= n %>:
   body: <%= Faker::Lorem.sentences(number: 5) %>
   date: <%= Faker::Date.forward(days: 25) %>
   location: <%= Faker::Restaurant.name %>
-  creator_id: 1
+  creator_id: 2
 <% end %>
