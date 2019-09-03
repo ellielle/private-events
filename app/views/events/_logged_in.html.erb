@@ -1,7 +1,10 @@
-<% event_list.each do |event| %>
-  <div class="events-list">
+<%= render 'shared/expired_events', expired_events: expired_events %>
+<%# TODO put dates on events %>
+<p>Upcoming Events:</p>
+<div class="events-list">
+  <% upcoming_events.each do |event| %>
     <ul>
       <li><%= link_to "#{event.title}", event_path(event) %> Hosted by: <%= event.creator.username %></li>
     </ul>
-  </div>
-<% end %>
+  <% end %>
+</div>
