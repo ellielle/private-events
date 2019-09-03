@@ -20,8 +20,13 @@ class EventsController < ApplicationController
   end
 
   def index
-    @expired = Event.past
-    @upcoming = Event.upcoming
+    if logged_in?
+      @expired = Event.past
+      @upcoming = Event.upcoming
+    else
+      flash[:danger] = "You are not logged in!"
+      redirect_to login_path
+    end
   end
 
   private
