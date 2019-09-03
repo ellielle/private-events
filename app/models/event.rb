@@ -11,11 +11,11 @@ class Event < ApplicationRecord
 
   private
 
-  def upcoming
+  def self.upcoming
     Event.all.where("date > ?", Time.now)
   end
 
-  def past
+  def self.past
     Event.all.where("date < ?", Time.now)
   end
 end
