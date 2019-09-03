@@ -1,7 +1,7 @@
 birthday:
   title: Canadas Birthday
   body: Cake!
-  date: <%= Time.now %>
+  date: <%= 3.days.from_now %>
   location: Here!
   creator_id: 1
 
@@ -9,7 +9,7 @@ birthday:
 event_<%= n %>:
   title: <%= Faker::Lorem.sentence %>
   body: <%= Faker::Lorem.sentences(number: 5) %>
-  date: <%= Faker::Date.forward(days: 25) %>
+  date: <%= 3.days.from_now %>
   location: <%= Faker::Restaurant.name %>
   creator_id: 2
 <% end %>
