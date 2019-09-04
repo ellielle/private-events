@@ -32,10 +32,10 @@ class UsersController < ApplicationController
   end
 
   def upcoming_events
-    @upcoming_events = @user.attended_events.where("date > ?", Time.now)
+    @upcoming_events = @user.attended_events.where("date > ?", Time.now).order(:date)
   end
 
   def expired_events
-    @expired_events = @user.attended_events.where("date <= ?", Time.now)
+    @expired_events = @user.attended_events.where("date <= ?", Time.now).order(:date)
   end
 end
