@@ -1,13 +1,13 @@
 <% provide(:title, @event.title) %>
 <%# TODO make page look better %>
+<div class="event-info">
+Event Information:
+</div>
 <div class="attendees">
-  <% if !@event.attendees.empty? %>
+  RSVPs
   <ul>
     <% @event.attendees.each do |attendee| %>
       <li><%= attendee.username %></li>
     <% end %>
   </ul>
-  <% else %>
-  <p>No one is attending this event.</p>
-  <% end %>
 </div>
