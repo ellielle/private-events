@@ -30,11 +30,4 @@ class EventsDisplayTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
     assert_not flash.empty?
   end
-
-  test "user's profile page lists events created by them" do
-    log_in_as(@user)
-    get profile_path
-    assert_template 'users/show'
-    assert_select "li.event-title", count: 1
-  end
 end
