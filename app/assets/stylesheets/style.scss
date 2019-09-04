@@ -18,13 +18,13 @@ body {
 }
 
 // Line up events on profile page
-.created-events, .attending-events, .attendees, .events-list, .expired-events {
+.attending-events, .attendees, .events-list, .expired-events {
   ul {
     padding-left: 0;
   }
 }
 
-.attending-events, .created-events {
+.attending-events {
   margin-top: 30px;
 }
 
