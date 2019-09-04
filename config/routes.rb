@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'invitations/show'
   root 'pages#home'
   get 'create', to: 'events#new'
   post 'create', to: 'events#create'
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  get 'invites', to: 'invitations#show'
   resources :users, only: [:new, :create, :show]
   resources :events, only: [:index, :show, :create]
+  resources :invitations, only: [:show]
 end
