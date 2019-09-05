@@ -4,6 +4,8 @@ class Event < ApplicationRecord
   has_many :attendances, foreign_key: :attended_event_id
   has_many :attendees, through: :attendances, source: :attendee
   belongs_to :creator, class_name: "User"
+  has_many :invitations, foreign_key: :invited_event_id
+  has_many :invited_events, through: :invitations, source: :invited_event
   validates :title, presence: true
   validates :body, presence: true
   validates :date, presence: true
