@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_152638) do
   create_table "invitations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "invited_by_id"
+    t.integer "invited_user_id"
     t.integer "invited_event_id"
   end
 
