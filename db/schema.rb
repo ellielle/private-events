@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_152638) do
     t.datetime "updated_at", null: false
     t.integer "invited_by_id"
     t.integer "invited_event_id"
+    t.integer "invited_user_id"
   end
 
   create_table "users", force: :cascade do |t|
