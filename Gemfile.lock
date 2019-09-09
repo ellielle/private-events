@@ -105,6 +105,11 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    octicons (9.1.1)
+      nokogiri (>= 1.6.3.1)
+    octicons_helper (9.1.1)
+      octicons (= 9.1.1)
+      rails
     pg (1.1.4)
     puma (3.12.1)
     rack (2.0.7)
@@ -204,6 +209,8 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   minitest
   minitest-reporters
+  octicons
+  octicons_helper
   pg
   puma (~> 3.11)
   rails (~> 5.2.3)
