@@ -69,6 +69,13 @@ body {
         }
       }
     }
+    .octicon {
+      display: inline-block;
+      vertical-align: text-top;
+      fill: white;
+      height: 17px;
+      width: 17px;
+    }
     .open > a {
       background-color: $navbar-background-color;
       &:hover, &:focus {
@@ -86,6 +93,8 @@ body {
 .dropdown-menu {
   background-color: $navbar-background-color;
 }
+
+
 /* Typography */
 
 h1 {
