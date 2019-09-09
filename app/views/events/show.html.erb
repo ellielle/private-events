@@ -2,6 +2,9 @@
 <%# TODO make page look better %>
 <div class="event-info">
   <p>Event Hosted By: <%= @organizer.username %></p>
+  <p>Date: <%= I18n.l(@event.date, format: :long, locale: :'en') %></p>
+  <p>Location: <%= @event.location %></p>
+  <p>Description: <%= @event.body %></p>
 </div>
 <div class="attendees">
   RSVPs:
@@ -14,4 +17,3 @@
 <% if @organizer == current_user %>
   <%= render 'events/invite_users' %>
 <% end %>
-<%= debug(params) unless params.nil? %>

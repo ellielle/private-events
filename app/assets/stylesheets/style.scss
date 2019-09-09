@@ -20,7 +20,7 @@ body {
    */
 }
 
-// Line up events on profile page
+// Line up event info properly
 .attending-events, .attendees, .events-list, .expired-events {
   ul {
     padding-left: 0;
@@ -33,6 +33,16 @@ body {
 
 .expired-events {
   margin-bottom: 30px;
+}
+
+.event-info {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.attendees {
+  margin-top: 4em;
 }
 
 /* Header */
@@ -106,7 +116,7 @@ textarea {
 }
 
 .invite-users {
-  margin-top: 25%;
+  margin-top: 7em;
   .form-control {
     width: 16%;
   }
