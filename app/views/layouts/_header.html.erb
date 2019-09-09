@@ -20,6 +20,7 @@
           <% if current_user.invitations.any? %>
             <li><%= link_to invites_path do %>
               <%= octicon "mail-read" %>
+              <%= current_user.invitations.count %>
               <% end %>
             </li>
           <% else %>
