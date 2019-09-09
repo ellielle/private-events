@@ -1,13 +1,17 @@
 <% provide(:title, @event.title) %>
 <%# TODO make page look better %>
 <div class="event-info">
-Event Information:
+  <p>Event Hosted By: <%= @organizer.username %></p>
 </div>
 <div class="attendees">
-  RSVPs
+  RSVPs:
   <ul>
-    <% @event.attendees.each do |attendee| %>
+    <% @attendees.each do |attendee| %>
       <li><%= attendee.username %></li>
     <% end %>
   </ul>
 </div>
+<% if @organizer == current_user %>
+  <%= render 'events/invite_users' %>
+<% end %>
+<%= debug(params) unless params.nil? %>

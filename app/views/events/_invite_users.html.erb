@@ -1,0 +1,9 @@
+<div class="invite-users">
+  <%= form_for(:invitation, url: invites_path) do |f| %>
+    <%= f.label "Invite User:" %>
+    <%= f.text_field :username, class: "form-control" %>
+    <%= f.hidden_field :event_id, value: @event.id %>
+    <%= f.hidden_field :creator_id, value: @event.creator_id %>
+    <%= f.submit "Invite User", class: "btn btn-primary" %>
+  <% end %>
+</div>
