@@ -5,7 +5,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Current Events", events_path %></li>
         <% if logged_in? %>
-          <%# TODO figure out why/how to fix dropdown being highlighted after closing %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Profile <b class="caret"></b>
@@ -17,6 +16,18 @@
               <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
             </ul>
           </li>
+          <%# TODO add number of new invites by icon %>
+          <% if current_user.invitations.any? %>
+            <li><%= link_to invites_path do %>
+              <%= octicon "mail-read" %>
+              <% end %>
+            </li>
+          <% else %>
+            <li><%= link_to invites_path do %>
+              <%= octicon "mail" %>
+              <% end %>
+            </li>
+          <% end %>
         <% else %>
           <li><%= link_to "Sign In", login_path  %></li>
         <% end %>
