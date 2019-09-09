@@ -15,6 +15,7 @@ $navbar-background-color: #333333;
 /* General */
 body {
   padding-top: 60px;
+  //background: image-url('events.png') no-repeat center center fixed;
 }
 
 // Line up events on profile page
@@ -100,6 +101,13 @@ li {
 
 textarea {
   resize: none;
+}
+
+.invite-users {
+  margin-top: 25%;
+  .form-control {
+    width: 16%;
+  }
 }
 
 /* Misc */
