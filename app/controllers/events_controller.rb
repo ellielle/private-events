@@ -17,6 +17,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.friendly.find(params[:id])
+    @organizer = @event.attendees.take
+    @attendees = @event.attendees.where(id: 2..-1)
   end
 
   def index
