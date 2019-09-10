@@ -1,10 +1,12 @@
 <div class="invitations">
-  <% if current_user.invitations.any? %>
-    <p>You have <%= current_user.invitations.count %> outstanding invitations.</p>
-    <div class="container">
-      <% current_user.invitations.each do |invite| %>
-        <%= link_to  %>
-      <% end %>
+  <% if @invitations.any? %>
+    <p>You have <%= pluralize(@invitations.count, "invitation") %>.</p>
+    <div class="events-list">
+      <ul>
+        <% @event.each do |event| %>
+          <li><%= link_to "#{event.title}", event_path(event) %> - Hosted by <%= "#{event.creator.username}" %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 </div>

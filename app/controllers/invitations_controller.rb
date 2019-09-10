@@ -23,4 +23,13 @@ class InvitationsController < ApplicationController
       end
     end
   end
+
+  def index
+    @invitations = current_user.invitations
+    @event = []
+    @invitations.each do |event|
+      @event << Event.where("events.id = ?", event.invited_event_id).first
+    end
+    # TODO EVENT MAY NOT BE TREATED AS SAME OBJECT IT NEEDS TO BE AND THUS CANNOT ACCESS TITLE ATTRIBUTE
+  end
 end
