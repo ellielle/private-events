@@ -1,1 +1,8 @@
-This page will welcome user and ask them to sign in or sign up
+<% if logged_in? %>
+  <%# TODO show new events since last login %>
+<% else %>
+  <div class="login-signup">
+    <p>New User? <%= link_to "Sign up here!", signup_path %></p>
+    <p>Already have an account? <%= link_to "Click here to login.", login_path %></p>
+  </div>
+<% end %>
