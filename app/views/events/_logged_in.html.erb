@@ -5,6 +5,7 @@
   <% upcoming_events.each do |event| %>
     <ul>
       <li><%= link_to "#{event.title}", event_path(event) %> Hosted by: <%= event.creator.username %></li>
+      <li class="event-date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
     </ul>
   <% end %>
 </div>

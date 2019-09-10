@@ -20,6 +20,10 @@ body {
    */
 }
 
+.event-date {
+  font-size: small;
+  margin-bottom: 10px;
+}
 // Line up event info properly
 .attending-events, .attendees, .events-list, .expired-events {
   ul {

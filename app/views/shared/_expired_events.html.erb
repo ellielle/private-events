@@ -4,6 +4,7 @@
     <ul>
       <% expired_events.each do |event| %>
         <li><%= link_to event.title, event_path(event) %></li>
+        <li class="event-date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
       <% end %>
     </ul>
   </div>
