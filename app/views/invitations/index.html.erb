@@ -1,0 +1,10 @@
+<div class="invitations">
+  <% if current_user.invitations.any? %>
+    <p>You have <%= current_user.invitations.count %> outstanding invitations.</p>
+    <div class="container">
+      <% current_user.invitations.each do |invite| %>
+        <%= link_to  %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
