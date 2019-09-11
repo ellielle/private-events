@@ -1,13 +1,23 @@
 <div class="invitations">
-  <% if @invitations.any? %>
-    <p>You have <%= pluralize(@invitations.count, "invitation") %>.</p>
+  <% if !@invitations.nil? %>
+    <p class="events-list-items">You have <%= pluralize(@invitations.count, "invitation") %>.</p>
     <div class="events-list">
       <ul>
         <% @event.each do |event| %>
-          <li><%= link_to "#{event.title}", event_path(event) %> - Hosted by <%= "#{event.creator.username}" %></li>
-          <li class="event-date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
+          <div class="events-list-items">
+            <li><%= link_to "#{event.title}", event_path(event) %> - Hosted by <%= "#{event.creator.username}" %></li>
+            <li class="event-date"><%= I18n.l(event.date, format: :long, locale: :'en') %></li>
+            <%= form_for(:invitations, url: invited_path, method: :delete) do |f| %>
+              <%= submit_tag "Accept", class: "btn btn-primary" %>
+              <%= submit_tag "Decline", class: "btn btn-primary" %>
+              <%= hidden_field_tag "event_id", event.id %>
+              <%= hidden_field_tag "invited_user_id", current_user.id %>
+            <% end %>
+          </div>
         <% end %>
       </ul>
     </div>
+  <% else %>
+    <p class="events-list-items">You have 0 invitations.</p>
   <% end %>
 </div>
