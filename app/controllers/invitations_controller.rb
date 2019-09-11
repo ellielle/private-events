@@ -3,23 +3,23 @@ class InvitationsController < ApplicationController
   end
 
   def create
+    #TODO don't create if user is already attending the event
     @invitation = User.find_by(username: params[:invitation][:username])
     if @invitation.nil?
       flash[:danger] = "User does not exist."
       redirect_to request.referrer
     else
-      invite = @invitation.invitations.build(invited_user_id: @invitation.id,
-                                             invited_by_id: params[:invitation][:creator_id],
-                                             invited_event_id: params[:invitation][:event_id])
-      if Invitation.where(invited_event_id: params[:invitation][:event_id],
-                          invited_user_id: @invitation.id).empty?
+      if !@invitation.invitations.where(invited_user_id: @invitation.id).exists?
+        invite = @invitation.invitations.build(invited_user_id: @invitation.id,
+                                               invited_by_id: params[:invitation][:creator_id],
+                                               invited_event_id: params[:invitation][:event_id])
         if invite.save
           flash[:success] = "#{@invitation.username} invited to event!"
           redirect_to request.referrer
         end
       else
         flash[:warning] = "#{@invitation.username} is already invited to this event!"
-        redirect_to request.referrer
+        redirect_to request.referer
       end
     end
   end
@@ -38,7 +38,7 @@ class InvitationsController < ApplicationController
     elsif params[:commit] == "Decline"
       destroy_invitation(params[:event_id], params[:invited_user_id])
     end
-    render :index
+    redirect_to invites_path
   end
 
   private
