@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'invites', to: 'invitations#index'
   post 'invites', to: 'invitations#create'
+  delete 'invited', to: 'invitations#destroy'
   resources :users, only: [:new, :create, :show]
   resources :events, only: [:index, :show, :create]
-  resources :invitations, only: [:index, :create]
+  resources :invitations, only: [:index, :create, :destroy]
 end
