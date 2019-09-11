@@ -30,6 +30,33 @@ class InvitationsController < ApplicationController
     @invitations.each do |event|
       @event << Event.where("events.id = ?", event.invited_event_id).first
     end
-    # TODO EVENT MAY NOT BE TREATED AS SAME OBJECT IT NEEDS TO BE AND THUS CANNOT ACCESS TITLE ATTRIBUTE
+  end
+
+  def destroy
+    if params[:commit] == "Accept"
+      accept_invite(params[:event_id], params[:invited_user_id])
+    elsif params[:commit] == "Decline"
+      destroy_invitation(params[:event_id], params[:invited_user_id])
+    end
+    render :index
+  end
+
+  private
+
+  def accept_invite(event, user_id)
+    user = User.find_by(id: user_id)
+    unless user.attendances.where(attended_event_id: event).exists?
+      accept = user.attendances.build(attended_event_id: event)
+      if accept.save
+        flash[:success] = "Invitation accepted."
+        destroy_invitation(event, user_id)
+      else
+        flash[:success] = "Invitation declined."
+      end
+    end
+  end
+
+  def destroy_invitation(event, user)
+    Invitation.where(invited_event_id: event, invited_user_id: user).destroy_all
   end
 end
