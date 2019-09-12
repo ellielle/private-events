@@ -11,8 +11,6 @@ to model many-to-many relationships and also to be very conscious about your for
 Note: Passwords for accounts are specifically not required per project instructions.
 
 ## Getting started
-<details>
-    <summary>Warning! Project not yet complete. Click to expand instructions.</summary>
     
 ### Requirements: 
 * Ruby 2.6.3
@@ -22,4 +20,3 @@ Note: Passwords for accounts are specifically not required per project instructi
 * Clone the repo
 * run ```$ bundle install --without production``` to install dependencies
 * run ```$ rails test``` to ensure all tests pass
-</details>
