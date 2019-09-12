@@ -2,6 +2,13 @@
   <div class="container">
     <%= link_to "Simple Events", root_path, id: "logo" %>
     <nav>
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "https://github.com/ellielle/private-events" do %>
+            <%= octicon "mark-github" %>
+          <% end %>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Current Events", events_path %></li>
         <% if logged_in? %>
