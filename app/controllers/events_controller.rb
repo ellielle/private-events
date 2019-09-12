@@ -17,8 +17,10 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.friendly.find(params[:id])
-    @organizer = @event.attendees.take
-    @attendees = @event.attendees.where.not(username: @organizer.username)
+    unless @event.attendees.nil? || @event.attendees.empty?
+      @organizer = @event.attendees.take
+      @attendees = @event.attendees.where.not(username: @organizer.username)
+    end
   end
 
   def index
