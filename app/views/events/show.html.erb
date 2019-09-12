@@ -14,6 +14,8 @@
     <% end %>
   </ul>
 </div>
-<% if @organizer == current_user %>
-  <%= render 'events/invite_users' %>
+<% unless @event.date < DateTime.now %>
+  <% if @organizer == current_user %>
+    <%= render 'events/invite_users' %>
+  <% end %>
 <% end %>
