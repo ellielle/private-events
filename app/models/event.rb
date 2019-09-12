@@ -10,6 +10,15 @@ class Event < ApplicationRecord
   validates :body, presence: true
   validates :date, presence: true
   validates :location, presence: true
+  validate :not_past_date
   scope :upcoming, -> { where("date > ?", Time.now).order(:date) }
   scope :past, -> { where("date < ?", Time.now).order(:date) }
+
+  private
+
+  def not_past_date
+    if self.date < DateTime.now
+      errors.add(:date, " cannot be in the past.")
+    end
+  end
 end
