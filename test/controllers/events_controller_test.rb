@@ -22,6 +22,8 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
+    log_in_as(@user)
     get event_path(events(:birthday))
+    assert_response :success
   end
 end

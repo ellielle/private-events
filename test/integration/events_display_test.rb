@@ -11,7 +11,7 @@ class EventsDisplayTest < ActionDispatch::IntegrationTest
     assert_template 'events/index'
     assert_template 'events/_logged_in'
     assert_select 'div.events-list' do
-      assert_select 'li', count: 26
+      assert_select 'li', count: 52
     end
   end
 
